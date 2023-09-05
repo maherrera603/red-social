@@ -1,0 +1,18 @@
+# <IfModule mod_rewrite.c>
+# RewriteEngine ON
+# RewriteCond %{SCRIPT_FILENAME} !-d
+# RewriteCond %{SCRIPT_FILENAME} !-f
+# RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+# </IfModule>
+
+<ifModule mod_rewrite.c>
+# activar rewrite
+RewriteEngine on
+# ErrorDocument 404
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</ifModule>
